@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html, #root {
+  height: 100%;
+  display: flex;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar a {
+  padding: 15px 20px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.sidebar a:hover {
+  background-color: #575757;
+}
+
+.main-content {
+  flex-grow: 1;
+  transition: margin-left 0.3s, width 0.3s;
+}
+
+.main-content.with-sidebar {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+
+.main-content.without-sidebar {
+  margin-left: 0;
+  width: 100%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 250px; /* Adjusted to sidebar width */
+  width: calc(100% - 250px);
+  background-color: #fff;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s, width 0.3s;
+}
+
+.header.with-sidebar {
+  left: 250px;
+  width: calc(100% - 250px);
+}
+
+.header.without-sidebar {
+  left: 0;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  margin-top: 60px; /* Height of header */
+  padding: 20px;
+}
+/* Ensure this is imported in App.js */
+.content.with-sidebar {
+  margin-left: 250px; /* Adjusted to sidebar width */
+  transition: margin-left 0.3s;
+}
+
+.content.without-sidebar {
+  margin-left: 0;
+  transition: margin-left 0.3s;
+}

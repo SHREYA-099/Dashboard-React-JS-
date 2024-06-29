@@ -1,0 +1,50 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 250px; /* Default sidebar width */
+    width: calc(100% - 250px);
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s, width 0.3s;
+  }
+  
+  .header.with-sidebar {
+    left: 250px;
+    width: calc(100% - 250px);
+  }
+  
+  .header.without-sidebar {
+    left: 0;
+    width: 100%;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-content h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .header-content button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-content button:focus {
+    outline: none;
+  }
+  
+  .header-content button svg {
+    width: 24px;
+    height: 24px;
+  }
